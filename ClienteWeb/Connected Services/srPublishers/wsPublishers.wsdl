@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarPublishers">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPublishersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPublishers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarPublishersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizarPublishers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarPublishersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPublishers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarPublishersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPublishers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarPublishersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarStores">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarStoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarStoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarStores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarStoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarStoresResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarStores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarStoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarStoresResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarStores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarStoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarStoresResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarStores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarStoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarStoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarJobs">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarJobsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Max1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarJobsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarJobsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Max1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarJobsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarJobsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPublishers" />
+  </wsdl:message>
+  <wsdl:message name="ListarPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarPublishers" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarPublishers" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPublishers" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarPublishers" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarStoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarStores" />
+  </wsdl:message>
+  <wsdl:message name="ListarStoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarStoresSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarStores" />
+  </wsdl:message>
+  <wsdl:message name="AgregarStoresSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarStoresSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarStores" />
+  </wsdl:message>
+  <wsdl:message name="EliminarStoresSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarStoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarStores" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarStoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarStoresSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarStores" />
+  </wsdl:message>
+  <wsdl:message name="BuscarStoresSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarJobs" />
+  </wsdl:message>
+  <wsdl:message name="ListarJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarJobs" />
+  </wsdl:message>
+  <wsdl:message name="AgregarJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarJobs" />
+  </wsdl:message>
+  <wsdl:message name="EliminarJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarJobs" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarJobs" />
+  </wsdl:message>
+  <wsdl:message name="BuscarJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarJobsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsPublishersSoap">
+    <wsdl:operation name="ListarPublishers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Publishers</wsdl:documentation>
+      <wsdl:input message="tns:ListarPublishersSoapIn" />
+      <wsdl:output message="tns:ListarPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPublishers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Publishers</wsdl:documentation>
+      <wsdl:input message="tns:AgregarPublishersSoapIn" />
+      <wsdl:output message="tns:AgregarPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPublishers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Publishers</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarPublishersSoapIn" />
+      <wsdl:output message="tns:ActualizarPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPublishers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Publishers</wsdl:documentation>
+      <wsdl:input message="tns:EliminarPublishersSoapIn" />
+      <wsdl:output message="tns:EliminarPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPublishers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Publishers</wsdl:documentation>
+      <wsdl:input message="tns:BuscarPublishersSoapIn" />
+      <wsdl:output message="tns:BuscarPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarStores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Stores</wsdl:documentation>
+      <wsdl:input message="tns:ListarStoresSoapIn" />
+      <wsdl:output message="tns:ListarStoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarStores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Stores</wsdl:documentation>
+      <wsdl:input message="tns:AgregarStoresSoapIn" />
+      <wsdl:output message="tns:AgregarStoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarStores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Stores</wsdl:documentation>
+      <wsdl:input message="tns:EliminarStoresSoapIn" />
+      <wsdl:output message="tns:EliminarStoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarStores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Stores</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarStoresSoapIn" />
+      <wsdl:output message="tns:ActualizarStoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar stores</wsdl:documentation>
+      <wsdl:input message="tns:BuscarStoresSoapIn" />
+      <wsdl:output message="tns:BuscarStoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarJobs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Jobs</wsdl:documentation>
+      <wsdl:input message="tns:ListarJobsSoapIn" />
+      <wsdl:output message="tns:ListarJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarJobs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Jobs</wsdl:documentation>
+      <wsdl:input message="tns:AgregarJobsSoapIn" />
+      <wsdl:output message="tns:AgregarJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarJobs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Jobs</wsdl:documentation>
+      <wsdl:input message="tns:EliminarJobsSoapIn" />
+      <wsdl:output message="tns:EliminarJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJobs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Jobs</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarJobsSoapIn" />
+      <wsdl:output message="tns:ActualizarJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarJobs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Jobs</wsdl:documentation>
+      <wsdl:input message="tns:BuscarJobsSoapIn" />
+      <wsdl:output message="tns:BuscarJobsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsPublishersSoap" type="tns:wsPublishersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPublishers">
+      <soap:operation soapAction="http://tempuri.org/ListarPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPublishers">
+      <soap:operation soapAction="http://tempuri.org/AgregarPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPublishers">
+      <soap:operation soapAction="http://tempuri.org/ActualizarPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPublishers">
+      <soap:operation soapAction="http://tempuri.org/EliminarPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPublishers">
+      <soap:operation soapAction="http://tempuri.org/BuscarPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarStores">
+      <soap:operation soapAction="http://tempuri.org/ListarStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarStores">
+      <soap:operation soapAction="http://tempuri.org/AgregarStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarStores">
+      <soap:operation soapAction="http://tempuri.org/EliminarStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarStores">
+      <soap:operation soapAction="http://tempuri.org/ActualizarStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStores">
+      <soap:operation soapAction="http://tempuri.org/BuscarStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarJobs">
+      <soap:operation soapAction="http://tempuri.org/ListarJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarJobs">
+      <soap:operation soapAction="http://tempuri.org/AgregarJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarJobs">
+      <soap:operation soapAction="http://tempuri.org/EliminarJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJobs">
+      <soap:operation soapAction="http://tempuri.org/ActualizarJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarJobs">
+      <soap:operation soapAction="http://tempuri.org/BuscarJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsPublishersSoap12" type="tns:wsPublishersSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPublishers">
+      <soap12:operation soapAction="http://tempuri.org/ListarPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPublishers">
+      <soap12:operation soapAction="http://tempuri.org/AgregarPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPublishers">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPublishers">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPublishers">
+      <soap12:operation soapAction="http://tempuri.org/BuscarPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarStores">
+      <soap12:operation soapAction="http://tempuri.org/ListarStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarStores">
+      <soap12:operation soapAction="http://tempuri.org/AgregarStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarStores">
+      <soap12:operation soapAction="http://tempuri.org/EliminarStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarStores">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStores">
+      <soap12:operation soapAction="http://tempuri.org/BuscarStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarJobs">
+      <soap12:operation soapAction="http://tempuri.org/ListarJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarJobs">
+      <soap12:operation soapAction="http://tempuri.org/AgregarJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarJobs">
+      <soap12:operation soapAction="http://tempuri.org/EliminarJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJobs">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarJobs">
+      <soap12:operation soapAction="http://tempuri.org/BuscarJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsPublishers">
+    <wsdl:port name="wsPublishersSoap" binding="tns:wsPublishersSoap">
+      <soap:address location="https://localhost:44381/wsPublishers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsPublishersSoap12" binding="tns:wsPublishersSoap12">
+      <soap12:address location="https://localhost:44381/wsPublishers.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
